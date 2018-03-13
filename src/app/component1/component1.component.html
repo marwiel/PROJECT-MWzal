@@ -1,0 +1,21 @@
+<div class="box">
+  <div class="search">
+    <input type="text" name="search" [(ngModel)]="search" placeholder="Wyszukaj produkt" />
+  </div>
+  <div class="headerList">
+    Lista przedmiotów
+  </div>
+  <div class="list">
+    <ul>
+        <li *ngFor="let item of itemList | filter:search " >
+          {{item}}
+          <span class="remove" (click)="removeItem(item)">&times;</span>
+        </li>
+    </ul>
+  </div>
+  <div class="bottom">
+    <input [(ngModel)]="newItem" />
+    <button (click)="addItem()">Dodaj</button>
+  </div>
+</div>
+<!-- opakować to w customowe -->
